@@ -1,0 +1,129 @@
+/* North Star Bakery - Main Stylesheet */
+
+/* Basic page styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf2;
+    color: #3b2a20;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #6b3e26;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+}
+
+h2,
+h3 {
+    color: #6b3e26;
+}
+
+/* Images and video */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+fieldset {
+    border: 1px solid #b8875c;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #6b3e26;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b8875c;
+}
+
+/* Footer */
+footer {
+    background-color: #3b2a20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    main {
+        padding: 30px;
+    }
+}
