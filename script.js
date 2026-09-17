@@ -68,3 +68,59 @@ favoriteButtons.forEach(function(button) {
 
 // Load saved favorites when the page opens.
 updateButtons();
+// Contact form validation
+
+const contactForm = document.querySelector("form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const itemDetails = document.getElementById("item-details");
+
+        // Remove previous error messages.
+        document.querySelectorAll(".form-error").forEach(function(error) {
+            error.remove();
+        });
+
+        let formIsValid = true;
+
+        // Check that the name has at least 2 characters.
+        if (name.value.trim().length < 2) {
+            showFormError(name, "Please enter your name.");
+            formIsValid = false;
+        }
+
+        // Check that the email contains a valid email format.
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email.value.trim())) {
+            showFormError(email, "Please enter a valid email address.");
+            formIsValid = false;
+        }
+
+        // Check that the item details are not empty.
+        if (itemDetails.value.trim().length < 5) {
+            showFormError(
+                itemDetails,
+                "Please enter at least 5 characters for the item details."
+            );
+            formIsValid = false;
+        }
+
+        // Prevent submission if the form contains invalid information.
+        if (!formIsValid) {
+            event.preventDefault();
+        }
+    });
+}
+
+// Display an error message below the related field.
+function showFormError(field, message) {
+    const error = document.createElement("p");
+    error.className = "form-error";
+    error.textContent = message;
+    error.setAttribute("role", "alert");
+
+    field.insertAdjacentElement("afterend", error);
+}
