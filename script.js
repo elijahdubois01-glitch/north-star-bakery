@@ -124,3 +124,17 @@ function showFormError(field, message) {
 
     field.insertAdjacentElement("afterend", error);
 }
+// Remember the user's request type.
+const requestType = document.getElementById("request-type");
+
+if (requestType) {
+    const savedRequestType = localStorage.getItem("bakeryRequestType");
+
+    if (savedRequestType) {
+        requestType.value = savedRequestType;
+    }
+
+    requestType.addEventListener("change", function() {
+        localStorage.setItem("bakeryRequestType", requestType.value);
+    });
+}
