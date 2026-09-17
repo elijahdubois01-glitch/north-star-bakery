@@ -70,7 +70,7 @@ favoriteButtons.forEach(function(button) {
 updateButtons();
 // Contact form validation
 
-const contactForm = document.querySelector("form");
+const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
     contactForm.addEventListener("submit", function(event) {
@@ -109,9 +109,12 @@ if (contactForm) {
         }
 
         // Prevent submission if the form contains invalid information.
-        if (!formIsValid) {
-            event.preventDefault();
-        }
+       if (!formIsValid) {
+    event.preventDefault();
+} else {
+    event.preventDefault();
+    alert("Thank you for supporting North Star Bakery! Have a great day, and enjoy your treats!");
+}
     });
 }
 
